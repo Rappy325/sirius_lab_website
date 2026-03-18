@@ -6,258 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="images/lab_logo.png" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
-        background: #fff;
-        color: #222;
-        margin: 0;
-        padding: 0;
-        font-size: 22px;
-      }
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 32px 48px 64px 48px;
-      }
-      h1 {
-        color: #4b6e2f;
-        font-size: 1.15em;
-        font-weight: 700;
-        margin-bottom: 0.2em;
-      }
-      .people-list {
-        display: grid;
-        grid-template-columns: 120px 1fr 120px 1fr 120px 1fr 120px 1fr;
-        gap: 2em 1.2em;
-        margin-top: 2em;
-      }
-      @media (max-width: 900px) {
-        .people-list {
-          grid-template-columns: 120px 1fr 120px 1fr;
-        }
-      }
-      @media (max-width: 600px) {
-        .people-list {
-          grid-template-columns: 120px 1fr;
-        }
-      }
-      .person {
-        display: contents;
-      }
-      .person.pi {
-        grid-column: 1 / -1;
-        display: contents;
-        margin-bottom: 2em;
-      }
-      .person-info {
-        margin-left: 1.2em;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .person-photo {
-        width: 240px;
-        height: 240px;
-        border-radius: 8px;
-        object-fit: cover;
-        border: 1px solid #eee;
-        background: #fafafa;
-      }
-      .person.pi .person-photo {
-        height: 360px;
-      }
-      .person-name {
-        font-weight: bold;
-        color: #4b6e2f;
-        font-size: 1.1em;
-        margin-bottom: 0.2em;
-      }
-      .person-role {
-        color: #888;
-        font-size: 1em;
-        margin-bottom: 0.2em;
-      }
-      .person-desc {
-        color: #555;
-        font-size: 0.98em;
-        margin-bottom: 0.2em;
-      }
-      .person-teaching {
-        color: #888;
-        font-size: 0.95em;
-        margin-top: 0.3em;
-      }
-      .person-teaching br {
-        margin-top: 0.2em;
-        display: block;
-        content: "";
-      }
-      .person:not(.pi) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        grid-column: span 2;
-      }
-      .person:not(.pi) .person-photo {
-        margin-bottom: 0.5em;
-      }
-      .person:not(.pi) .person-info {
-        margin-left: 0;
-        text-align: center;
-        align-items: center;
-        justify-content: flex-start;
-      }
-    </style>
   </head>
   <body>
-    <nav style="background: #f7f7f7; border-bottom: 1px solid #e0e0e0; padding: 0.7em 0; margin-bottom: 2em;">
-      <div style="max-width: 1000px; margin: 0 auto; display: flex; gap: 2em;">
-        <a href="index.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Home</a>
-        <a href="people.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">People</a>
-        <a href="index.html#research" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Research</a>
-        <a href="publications.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Publications</a>
-        
+    <nav>
+      <div class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="people.html" class="active">People</a>
+        <a href="index.html#research">Research</a>
+        <a href="publications.html">Publications</a>
       </div>
     </nav>
     <div class="container">
-      <div style="margin: 1em 0; text-align: center;">
-        <img src="images/people/group_20250809.jpg" alt="SIRIUS Lab Group Photo 2025" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 2px 8px #0001;">
-        <div style="margin-top: 0.5em; color: #666; font-size: 0.9em; font-style: italic;">Group Photo at Longbin Building, SJTU Minhang Campus</div>
+      <div style="margin: 1em 0 3em 0; text-align: center;">
+        <img src="images/people/group_20250809.jpg" alt="SIRIUS Lab Group Photo 2025" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+        <div style="margin-top: 0.75em; color: var(--text-muted); font-size: 0.95em; font-style: italic;">Group Photo at Longbin Building, SJTU Minhang Campus, 2025 Summer</div>
       </div>
       <h1>People</h1>
-      <div class="people-list">
+      <div class="people-grid">
         <!-- PI -->
-        <div class="person pi" style="grid-column: 1 / -1; align-items: start; display: flex;">
-          <img class="person-photo" src="images/people/yutong_ban.jpg" alt="Yutong Ban" style="align-self: flex-start;" />
+        <div class="person-card pi">
+          <img class="person-photo" src="images/people/yutong_ban.jpg" alt="Yutong Ban" />
           <div class="person-info">
             <div class="person-name">Yutong Ban</div>
-            <div class="person-role">Principal Investigator, Assistant Professor </div>
-            <div class="person-desc">Yutong Ban is currently a tenure-track assistant professor at UM-SJTU Joint Institute. Before joining SJTU, he was a postdoctoral research fellow at Distributed Robotics Laboratory (DRL), CSAIL, MIT and Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), MGH, Harvard Medical School, working with Prof. Daniela Rus and Prof. Ozanan Meireles. He obtained his Ph.D. at Perception team of INRIA Grenoble-Rhône-Alpes, France, under supervision of Dr. Radu Horaud. His research interests include Surgical AI, Robot perception, and Robot manipulations. </div>
+            <div class="person-role">Principal Investigator, Assistant Professor</div>
+            <div class="person-desc">Yutong Ban is currently a tenure-track assistant professor at Global College, Shanghai Jiao Tong University (SJTU). Before joining SJTU, he was a postdoctoral research fellow at Distributed Robotics Laboratory (DRL), CSAIL, MIT and Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), MGH, Harvard Medical School, working with Prof. Daniela Rus and Prof. Ozanan Meireles. He obtained his Ph.D. at Perception team of INRIA Grenoble-Rhône-Alpes, France, under supervision of Dr. Radu Horaud. His research interests include Surgical AI, Robot perception, and Robot manipulations.</div>
             <div class="person-desc" style="margin-top: 0.5em; margin-bottom: 0.5em;">
-              <a href="https://scholar.google.com/citations?user=4EXokwkAAAAJ" target="_blank" style="text-decoration: none; color: #4b6e2f; margin-right: 0.1em;">
-                <img src="images/google-scholar--v3.png" alt="Google Scholar" style="height: 1.2em; vertical-align: middle; margin-right: 0.0em;">
-              </a>/
-              <a href="https://github.com/Banyutong" target="_blank" style="text-decoration: none; color: #4b6e2f; margin-right: 0.1em;">
-                <img src="images/git.webp" alt="git" style="height: 1.2em; vertical-align: middle; margin-right: 0.em;">
-              </a>/
-              <a style="text-decoration: none;"> yban[at]sjtu[dot]edu[dot]cn
+              <a href="https://scholar.google.com/citations?user=4EXokwkAAAAJ" target="_blank" style="margin-right: 0.5em;">
+                <img src="images/google-scholar--v3.png" alt="Google Scholar" style="height: 1.2em; vertical-align: middle;">
               </a>
+              <a href="https://github.com/Banyutong" target="_blank" style="margin-right: 0.5em;">
+                <img src="images/git.webp" alt="git" style="height: 1.2em; vertical-align: middle;">
+              </a>
+              <span style="color: var(--text-muted); vertical-align: middle;">yban[at]sjtu[dot]edu[dot]cn</span>
             </div>
             <div class="person-teaching">
-              <b>Teaching:</b><br>
-              <span style="margin-left: 0em;">ECE2810J</span> Data Structure and Algorithms<br>
-              <span style="margin-left: 0em;">ECE4880J</span> Introduction to Computer Vision
+              <strong>Teaching:</strong><br>
+              ECE2810J Data Structure and Algorithms<br>
+              ECE4880J Introduction to Computer Vision
             </div>
           </div>
         </div>
 
         <!-- Postdocs Row -->
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/chen_yuan.jpg" alt="Chen Yuan">
           <div class="person-info">
             <div class="person-name">Chen Yuan</div>
-            <div class="person-role">Postdoctoral Fellow, </br> PhD from SJTU</div>
+            <div class="person-role">Postdoctoral Fellow<br>PhD from SJTU</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/jian_jiang.jpg" alt="Jian Jiang">
           <div class="person-info">
             <div class="person-name">Jian Jiang</div>
-            <div class="person-role">Postdoctoral Fellow<br> PhD from KCL</div>
+            <div class="person-role">Postdoctoral Fellow<br>PhD from KCL</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/yuqi_wang.jpg" alt="Yuqi Wang">
           <div class="person-info">
             <div class="person-name">Yuqi Wang</div>
-            <div class="person-role">Postdoctoral Fellow<br> PhD from UoL</div>
+            <div class="person-role">Postdoctoral Fellow<br>PhD from UoL</div>
           </div>
         </div>
         <!-- Students Rows -->
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/jianshu_hu.jpg" alt="Jianshu Hu">
           <div class="person-info">
             <div class="person-name">
-              <a href="https://jianshu-hu.github.io/" target="_blank" style="margin-left: 0.5em; font-size: 1em; background: transparent; color: #4b6e2f; border: none; border-radius: 4px; padding: 0px 8px; text-decoration: none; vertical-align: middle;">
-                Jianshu Hu
-              </a>
+              <a href="https://jianshu-hu.github.io/" target="_blank">Jianshu Hu</a>
             </div>
-            <div class="person-role">PhD Student <br> B.S. SJTU <br> Co-advised with Prof. Paul Weng</div>
+            <div class="person-role">PhD Student<br>B.S. SJTU<br>Co-advised with Prof. Paul Weng</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/yunpeng_jiang.jpg" alt="Yunpeng Jiang">
           <div class="person-info">
             <div class="person-name">
-              <a href="https://jyp9961.github.io/jyp.github.io/" target="_blank" style="margin-left: 0.5em; font-size: 1em; background: transparent; color: #4b6e2f; border: none; border-radius: 4px; padding: 0px 8px; text-decoration: none; vertical-align: middle;">
-                Yunpeng Jiang
-              </a>
+              <a href="https://jyp9961.github.io/jyp.github.io/" target="_blank">Yunpeng Jiang</a>
             </div>
-            <div class="person-role">PhD Student <br> B.S. SJTU <br> Co-advised with Prof. Paul Weng</div>
+            <div class="person-role">PhD Student<br>B.S. SJTU<br>Co-advised with Prof. Paul Weng</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/han_fang.jpg" alt="Han Fang">
           <div class="person-info">
             <div class="person-name">Han Fang</div>
-            <div class="person-role">PhD Student <br>B.S. SJTU</div>
+            <div class="person-role">PhD Student<br>B.S. SJTU</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/chenxi_lin.jpg" alt="Chenxi Lin">
           <div class="person-info">
             <div class="person-name">Chenxi Lin</div>
-            <div class="person-role">PhD Student <br> B.S. SJTU</div>
+            <div class="person-role">PhD Student<br>B.S. SJTU</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/kunyi_yang.jpg" alt="Kunyi Yang">
           <div class="person-info">
             <div class="person-name">Kunyi Yang</div>
-            <div class="person-role">PhD Student <br> B.S. SJTU</div>
+            <div class="person-role">PhD Student<br>B.S. SJTU</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/shujia_li.jpg" alt="Shujia Li">
           <div class="person-info">
             <div class="person-name">Shujia Li</div>
-            <div class="person-role">Master Student <br> B.S. Wuhan University</div>
+            <div class="person-role">Master Student<br>B.S. Wuhan University</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/chonlam_ho.jpg" alt="Chonlam Ho">
           <div class="person-info">
             <div class="person-name">Chonlam Ho</div>
-            <div class="person-role">Master Student <br> B.S. SJTU</div>
+            <div class="person-role">Master Student<br>B.S. SJTU</div>
           </div>
         </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/yuheng_zhao.jpg" alt="Yuheng Zhao">
           <div class="person-info">
             <div class="person-name">Yuheng Zhao</div>
-            <div class="person-role">Master Student <br> B.S. SJTU</div>
+            <div class="person-role">Master Student<br>B.S. SJTU</div>
           </div>
         </div>
-        <div class="person">
-          <img class="person-photo" src="images/people/leo_gabriel.jpg" alt="Leo Gabriel">
-          <div class="person-info">
-            <div class="person-name">Léo Gabriel</div>
-            <div class="person-role">Visiting Student <br> from École Polytechnique, France</div>
-          </div>
-        </div>
-        <div class="person">
+        <div class="person-card">
           <img class="person-photo" src="images/people/Raymond_Timothy.jpg" alt="Raymond Timothy">
           <div class="person-info">
             <div class="person-name">Raymond Timothy Tumiwa</div>
-            <div class="person-role">Master Student <br> B.S. SJTU</div>
+            <div class="person-role">Master Student<br>B.S. CUHK(SZ)</div>
+          </div>
+        </div>
+        <div class="person-card">
+          <img class="person-photo" src="images/people/zhiyuan_guan.jpg" alt="Zhiyuan Guan">
+          <div class="person-info">
+            <div class="person-name">Zhiyuan Guan</div>
+            <div class="person-role">Master Student<br>B.S. Wuhan University</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 3rem;">Alumni</h2>
+      <div class="people-grid">
+        <div class="person-card">
+          <img class="person-photo" src="images/people/leo_gabriel.jpg" alt="Leo Gabriel">
+          <div class="person-info">
+            <div class="person-name">Léo Gabriel</div>
+            <div class="person-role">Visiting Student<br>from École Polytechnique, France</div>
+          </div>
         </div>
       </div>
     </div>
-    <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 3em 0 0.0em 0;" />
-    <footer style="text-align:center; color:#888; font-size:0.8em; margin-top:0.5em; margin-bottom: 0.5em; padding:0.5em 0;">
+    <footer>
       © SJTU SIRIUS Lab
     </footer>
   </body>

@@ -6,232 +6,50 @@
   <title>SIRIUS Lab website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/lab_logo.png" />
-  <style>
-    body {
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
-      background: #fff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      font-size: 20px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 48px 64px 48px;
-    }
-
-    h1 {
-      color: #4b6e2f;
-      font-size: 1.1em;
-      font-weight: 700;
-      margin-bottom: 0.2em;
-    }
-
-    h2 {
-      color: #4b6e2f;
-      font-size: 0.95em;
-      font-weight: 700;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-    }
-
-    .meta {
-      color: #888;
-      font-size: 0.95em;
-      margin-bottom: 1.5em;
-    }
-
-    .news-list {
-      margin: 0 0 2em 0;
-      padding: 0 0 0 1.2em;
-      list-style: disc;
-    }
-
-    .news-list li {
-      margin-bottom: 0.7em;
-      line-height: 1.5;
-    }
-
-    .news-list .highlight {
-      font-weight: bold;
-      color: #4b6e2f;
-    }
-
-    .section {
-      margin-bottom: 2.5em;
-    }
-
-    a {
-      color: #a05a6c;
-      text-decoration: underline;
-    }
-
-    .topics,
-    .past-topics {
-      color: #a05a6c;
-      font-weight: 500;
-    }
-
-    .past-topics {
-      color: #b05a6c;
-    }
-
-    .pub-title {
-      font-size: 1.05em;
-      font-weight: bold;
-      margin-bottom: 0.2em;
-    }
-
-    .pub-authors {
-      margin-bottom: 0.2em;
-    }
-
-    .pub-links {
-      margin-top: 0.5em;
-    }
-
-    .pub-links a {
-      color: #a05a6c;
-      margin-right: 4px;
-    }
-
-    .pub-links a:first-child {
-      color: #7a9c3a;
-    }
-
-    .pub-venue {
-      font-weight: bold;
-      color: #222;
-      display: block;
-      margin-bottom: 0.3em;
-    }
-
-    .publication-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 24px;
-      margin-bottom: 2em;
-    }
-
-    .publication-img {
-      width: 320px;
-      min-width: 320px;
-      height: auto;
-      border-radius: 8px;
-      object-fit: contain;
-      background: #fafafa;
-      display: block;
-    }
-
-    .publication-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    @media (max-width: 600px) {
-      .publication-item {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .publication-img {
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-
-    .lab-desc {
-      color: #888;
-      font-size: 1.1em;
-      line-height: 1.1;
-      font-weight: 400;
-      text-align: justify;
-    }
-
-    .photo-player {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto 1.5em auto;
-      text-align: center;
-    }
-
-    .photo-player img {
-      width: 100%;
-      max-width: 840px;
-      height: auto;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 8px #0001;
-      margin-bottom: 0.5em;
-    }
-
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .carousel-controls button {
-      background: #f7f7f7;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 2em;
-      height: 2em;
-      font-size: 1.2em;
-      color: #4b6e2f;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .carousel-controls button:hover {
-      background: #e0e0e0;
-    }
-
-    #carousel-indicator {
-      color: #888;
-      font-size: 1em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <nav style="background: #f7f7f7; border-bottom: 1px solid #e0e0e0; padding: 0.7em 0; margin-bottom: 2em;">
-    <div style="max-width: 1000px; margin: 0 auto; display: flex; gap: 2em;">
-      <a href="index.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Home</a>
-      <a href="people.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">People</a>
-      <a href="index.html#research" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Research</a>
-      <a href="publications.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Publications</a>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="active">Home</a>
+      <a href="people.html">People</a>
+      <a href="index.html#research">Research</a>
+      <a href="publications.html">Publications</a>
     </div>
   </nav>
   <div class="container" id="home">
     <div class="photo-player">
-      <img id="carousel-img" src="images/lab_photo.png" alt="Lab Photo" />
+      <img id="carousel-img" src="images/photo_gallery/lab_photo.png" alt="Lab Photo" />
+      <button class="carousel-btn prev" onclick="prevPhoto()" aria-label="Previous photo">&#10094;</button>
+      <button class="carousel-btn next" onclick="nextPhoto(true)" aria-label="Next photo">&#10095;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
-    <h1> SIRIUS Lab - Surgical & Intelligent Robot & Innovative Unmanned Systems Laboratory</h1>
+    <h1>SIRIUS Lab</h1>
+    <h2 style="margin-top: 0; border: none; font-size: 1.2rem; color: var(--text-muted); font-weight: 400; padding-bottom: 0;">Surgical & Intelligent Robot & Innovative Unmanned Systems Laboratory</h2>
     <div class="lab-desc">
-      SIRIUS Lab focuses on the intersection of <b style="color:#1a4fa3;">artificial intelligence</b>, <b
+      SIRIUS Lab focuses on the intersection of <b style="color:var(--primary-color);">artificial intelligence</b>, <b
         style="color:#e67e22;">robotics</b>, and <b style="color:#8e44ad;">surgical data science</b>. We design
       learning-enabled robotic algorithms and platforms to understand the surgical scene, plan dexterous manipulation,
       and provide real-time autonomous assistance. Our mission is to make surgery safer, more precise, and universally
       accessible while uncovering new insights into human–machine collaboration in the operating room.
     </div>
     <div class="hiring">
-      </br>
-      <b style="color:#1a4fa3;">We have openings for postdocs, research assistants and visiting students. Please email
-        us if you're interested!</b>
+      We have openings for postdocs, research assistants and visiting students. Please email us if you're interested!
     </div>
 
     <div class="section">
       <h2>News</h2>
       <ul class="news-list">
+        <li><span class="highlight">[03/2026]</span> We are co-organizing the data initiative of the <a href="https://surgsigma.github.io" target="_blank" style="font-weight: bold;">SurgΣ</a> project! Check out the <a href="https://github.com/SurgSigma/SurgSigma" target="_blank" style="font-weight: bold;">GitHub repo</a>.</li>
+        <li><span class="highlight">[03/2026]</span> Our new surgical foundation model <a href="https://jianjiang1995.github.io/Surg-R1/" target="_blank" style="font-weight: bold;">Surg-R1</a> is now online!</li>
+        <li><span class="highlight">[01/2026]</span> One paper was accepted at ICLR 2026!</li>
+        <li><span class="highlight">[01/2026]</span> One paper was accepted at ICRA 2026!</li>
+        <li><span class="highlight">[12/2025]</span> One paper was accepted at NPJ Digital Surgery!</li>
+        <li><span class="highlight">[09/2025]</span> One paper was accepted at NeurIPS 2025!</li>
         <li><span class="highlight">[03/2025]</span> We are co-organizing <a
             href="https://sites.google.com/view/miccai-2025-colas/home" target="_blank"
-            style="color: #e75480; font-weight: bold;">COLAS</a> workshop at MICCAI 2025!</li>
+            style="font-weight: bold;">COLAS</a> workshop at MICCAI 2025!</li>
         <li><span class="highlight">[03/2025]</span> One paper was accepted at IEEE ISBI 2025!</li>
         <li><span class="highlight">[02/2025]</span> One paper was accepted at ICRA 2025!</li>
         <li><span class="highlight">[05/2024]</span> One paper was accepted at ICML 2024!</li>
@@ -244,18 +62,95 @@
     </div>
 
     <div class="section">
-      <h2 id="research">Research <span style="font-size: 0.7em; font-weight: 400;">( <span id="show-selected"
-            style="color: #222; font-weight: 600; cursor: pointer;">show selected</span> / <span id="show-by-date"
-            style="color: #7a9c3a; cursor: pointer;">show all by date</span> / <span id="show-by-topic"
-            style="color: #7a9c3a; cursor: pointer;">show all by topic</span> )</span></h2>
-      <div>
+      <h2 id="research">Research <span style="font-size: 0.6em; font-weight: 400; color: var(--text-muted); margin-left: 10px;">( <span id="show-selected"
+            style="color: var(--text-heading); font-weight: 600; cursor: pointer;">show selected</span> / <span id="show-by-date"
+            style="color: var(--primary-color); cursor: pointer;">show all by date</span> / <span id="show-by-topic"
+            style="color: var(--primary-color); cursor: pointer;">show all by topic</span> )</span></h2>
+      
+      <div class="research-highlight" style="margin-bottom: 3.5rem;">
+        <h3 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 1.5rem;">
+          Research Highlight
+        </h3>
+        <a href="https://jianjiang1995.github.io/Surg-R1/" target="_blank" style="display: block; text-decoration: none;">
+          <img src="images/publications/SurgR1.png" alt="Surg-R1: A Multimodal Foundation Model with Hierarchical Reasoning for Interpretable Decision Support" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 1.5rem; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)';">
+          <div style="text-align: center; font-weight: 600; color: var(--text-heading); font-size: 1.15rem; line-height: 1.5; text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 0.2s ease;" onmouseover="this.style.textDecorationColor='var(--text-heading)'" onmouseout="this.style.textDecorationColor='transparent'">
+            Surg-R1: A Multimodal Foundation Model with Hierarchical Reasoning for Interpretable Decision Support
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
         <span class="topics" data-topic="surgical-ai">Surgical AI</span> /
         <span class="topics" data-topic="robot-perception">Robot Perception</span> /
         <span class="topics" data-topic="robotic-learning">Robotic Learning</span>
         <br>
-        <span style="color: #888; font-size: 0.9em;">(* / †: indicates equal contribution.)</span>
+        <span style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; display: inline-block;">(* / †: indicates equal contribution.)</span>
       </div>
-      <div style="margin-top: 1.5em;" id="publications-container">
+      <div id="publications-container">
+        <div class="publication-item" data-topics="robotic-learning" data-date="2026">
+          <img class="publication-img" src="images/publications/omp.png"
+            alt="OMP: One-step Meanflow Policy with Directional Alignment">
+          <div class="publication-info">
+            <div class="pub-title">
+              OMP: One-step Meanflow Policy with Directional Alignment
+            </div>
+            <div class="pub-authors">
+              H. Fang, Y. Huang, Y. Zhao, P. Weng, X. Li, Y. Ban
+            </div>
+            <div class="pub-links">
+              <span class="pub-venue">arXiv, 2026</span>
+              <a href="https://kasumigaoka-utaha.github.io/OMP_web/" target="_blank">[page]</a><a href="https://arxiv.org/abs/2512.19347" target="_blank">[paper]</a>
+            </div>
+          </div>
+        </div>
+        <div class="publication-item" data-topics="surgical-ai" data-date="2026">
+          <img class="publication-img" src="images/publications/surgicalsigma.png"
+            alt="SurgΣ: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence">
+          <div class="publication-info">
+            <div class="pub-title">
+              SurgΣ: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence
+            </div>
+            <div class="pub-authors">
+              Z. Zeng<sup>*</sup>, M. Xu<sup>*</sup>, J. Jiang<sup>*</sup>, P. Guo<sup>*</sup>, Y. Xu, Z. Zhuo, C. H. Low, Y. He, D. Yang, C. Lin, Y. Gu, J. Guo, Y. Ban<sup>†</sup>, D. Xu<sup>†</sup>, Q. Dou<sup>†</sup>, Y. Jin<sup>†</sup>
+            </div>
+            <div class="pub-links">
+              <span class="pub-venue">arXiv, 2026</span>
+              <a href="https://surgsigma.github.io" target="_blank">[page]</a><a href="https://arxiv.org/abs/2603.16822" target="_blank">[paper]</a>
+            </div>
+          </div>
+        </div>
+        <div class="publication-item" data-topics="robotic-learning surgical-ai" data-date="2026">
+          <img class="publication-img" src="images/publications/ssp.gif"
+            alt="SSP: Safety-guaranteed Surgical Policy via Joint Optimization of Behavioral and Spatial Constraints">
+          <div class="publication-info">
+            <div class="pub-title">
+              SSP: Safety-guaranteed Surgical Policy via Joint Optimization of Behavioral and Spatial Constraints
+            </div>
+            <div class="pub-authors">
+              J. Hu, Z. Guan, L. Song, K. Leelakunwet, H. Wang, W. Xiao, Q. Dou, Y. Ban
+            </div>
+            <div class="pub-links">
+              <span class="pub-venue">arXiv, 2026</span>
+              <a href="https://arxiv.org/abs/2603.07032" target="_blank">[paper]</a>
+            </div>
+          </div>
+        </div>
+        <div class="publication-item" data-topics="robotic-learning" data-date="2026">
+          <img class="publication-img" src="images/publications/clap.jpg" style="object-fit: cover; aspect-ratio: 4/3;"
+            alt="Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints">
+          <div class="publication-info">
+            <div class="pub-title">
+              Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
+            </div>
+            <div class="pub-authors">
+              J. Hu, L. Wang, S. Li, Y. Jiang, X. Li, P. Weng, Y. Ban
+            </div>
+            <div class="pub-links">
+              <span class="pub-venue">International Conference on Learning Representations (ICLR), 2026</span>
+              <a href="https://arxiv.org/abs/2509.23575" target="_blank">[paper]</a>
+            </div>
+          </div>
+        </div>
         <div class="publication-item" data-topics="surgical-ai" data-date="2023">
           <img class="publication-img" src="images/publications/tmi2023.jpg"
             alt="Concept Graph Neural Networks for Video Understanding and Risk Mitigation">
@@ -460,11 +355,12 @@
               Learning</div>
             <div class="pub-authors">Y. Jiang, J. Hu, P. Weng<sup>†</sup>, Y. Ban<sup>†</sup></div>
             <div class="pub-links">
-              <span class="pub-venue"></span>
+              <span class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS), 2025</span>
               <a href="#">[page]</a><a href="#">[code]</a><a href="https://arxiv.org/abs/2505.13925">[paper]</a>
             </div>
           </div>
         </div>
+        <!--
         <div class="publication-item" data-topics="surgical-ai" data-date="2025">
           <img class="publication-img" src="images/publications/temporal_asymetry.png"
             alt="Temporal Propagation of Asymmetric Feature Pyramid for Surgical Scene Segmentation">
@@ -478,6 +374,7 @@
             </div>
           </div>
         </div>
+        -->
 
         <div class="publication-item" data-topics="robot-perception" data-date="2025">
           <img class="publication-img" src="images/publications/3d_deform.gif"
@@ -492,14 +389,14 @@
             </div>
           </div>
         </div>
-        <div class="publication-item" data-topics="robotic-learning" data-date="2025">
+        <div class="publication-item" data-topics="robotic-learning" data-date="2026">
           <img class="publication-img" src="images/publications/dsp_policy.gif"
             alt="Diffusion Stabilizer Policy for Automated Surgical Robot Manipulations">
           <div class="publication-info">
             <div class="pub-title">Diffusion Stabilizer Policy for Automated Surgical Robot Manipulations</div>
             <div class="pub-authors">C. Ho, J. Hu, H. Wang, Q. Dou, Y. Ban</div>
             <div class="pub-links">
-              <span class="pub-venue"></span>
+              <span class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2026</span>
               <a href="#">[page]</a><a href="#">[code]</a><a href="#">[paper]</a>
             </div>
           </div>
@@ -518,17 +415,16 @@
           </div>
         </div>
         <!-- 2024 Publications -->
-        <div class="publication-item" data-topics="surgical-ai" data-date="2024">
+        <div class="publication-item" data-topics="surgical-ai" data-date="2025">
           <img class="publication-img" src="images/publications/sam2.jpg"
-            alt="Is Segment Anything Model 2 All You Need for Surgery Video Segmentation? A Systematic Evaluation">
+            alt="Systematic Evaluation and Guidelines for Segment Anything Model in Surgical Video Analysis">
           <div class="publication-info">
-            <div class="pub-title">Is Segment Anything Model 2 All You Need for Surgery Video Segmentation? A Systematic
-              Evaluation</div>
+            <div class="pub-title">Systematic Evaluation and Guidelines for Segment Anything Model in Surgical Video Analysis</div>
             <div class="pub-authors">C. Yuan<sup>*</sup>, J. Jiang<sup>*</sup>, K. Yang<sup>*</sup>, L. Wu, R. Wang, Z.
-              Meng, H. Ping, Z. Xu, H. Wang,Y. Zhou, Y. Jin, Q. Dou, Y. Ban</div>
+              Meng, H. Ping, Z. Xu, H. Wang, Y. Zhou, W. Song, Y. Jin, Q. Dou, Y. Ban</div>
             <div class="pub-links">
-              <span class="pub-venue"></span>
-              <a href="#">[page]</a><a href="#">[code]</a><a href="#">[paper]</a>
+              <span class="pub-venue">NPJ Digital Surgery, 2025</span>
+              <a href="#">[page]</a><a href="#">[code]</a><a href="https://arxiv.org/abs/2501.00525">[paper]</a>
             </div>
           </div>
         </div>
@@ -574,35 +470,75 @@
       </div>
     </div>
   </div>
-  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 3em 0 0.0em 0;" />
-  <footer
-    style="text-align:center; color:#888; font-size:0.8em; margin-top:0.5em; margin-bottom: 0.5em; padding:0.5em 0;">
+  <footer>
     © SJTU SIRIUS Lab
   </footer>
   <script>
     // List your image paths here
     const photos = [
-      "images/lab_photo.png",
-      "images/lab_photo.png",
-      "images/lab_photo.png"
+      "images/photo_gallery/lab_photo.png",
+      "images/photo_gallery/group_20250809.jpg",
+      "images/photo_gallery/CLAP-rolling.jpg",
+      "images/photo_gallery/surgicalsigma.png"
     ];
     let currentPhoto = 0;
     let carouselInterval;
 
-    function showPhoto(idx) {
-      const img = document.getElementById('carousel-img');
-      currentPhoto = (idx + photos.length) % photos.length;
-      img.src = photos[currentPhoto];
+    function renderDots() {
+      const dotsContainer = document.getElementById('carousel-dots');
+      dotsContainer.innerHTML = '';
+      photos.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.className = `dot ${idx === currentPhoto ? 'active' : ''}`;
+        dot.onclick = () => {
+          resetInterval();
+          showPhoto(idx);
+        };
+        dotsContainer.appendChild(dot);
+      });
     }
 
-    function nextPhoto() {
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        dot.className = `dot ${idx === currentPhoto ? 'active' : ''}`;
+      });
+    }
+
+    function showPhoto(idx) {
+      const img = document.getElementById('carousel-img');
+      img.style.opacity = 0;
+      setTimeout(() => {
+        currentPhoto = (idx + photos.length) % photos.length;
+        img.src = photos[currentPhoto];
+        img.style.opacity = 1;
+        updateDots();
+      }, 300); // Faster transition
+    }
+
+    function nextPhoto(manual = false) {
+      if (manual) resetInterval();
       showPhoto(currentPhoto + 1);
+    }
+
+    function prevPhoto() {
+      resetInterval();
+      showPhoto(currentPhoto - 1);
+    }
+
+    function resetInterval() {
+      clearInterval(carouselInterval);
+      carouselInterval = setInterval(() => nextPhoto(false), 5000);
     }
 
     // Initialize and auto-play
     document.addEventListener("DOMContentLoaded", function () {
-      showPhoto(0);
-      carouselInterval = setInterval(nextPhoto, 2500);
+      // Set initial opacity to 1
+      const img = document.getElementById('carousel-img');
+      img.style.opacity = 1;
+      renderDots();
+      
+      carouselInterval = setInterval(() => nextPhoto(false), 5000);
 
       // Publication filtering functionality
       const showSelected = document.getElementById('show-selected');
@@ -618,10 +554,10 @@
           const topicName = topic.dataset.topic;
           if (activeTopics.has(topicName)) {
             activeTopics.delete(topicName);
-            topic.style.color = '#a05a6c';
+            topic.style.color = 'var(--text-muted)';
           } else {
             activeTopics.add(topicName);
-            topic.style.color = '#4b6e2f';
+            topic.style.color = 'var(--primary-color)';
           }
           filterPublications();
         });
@@ -629,31 +565,31 @@
 
       // Filter buttons click handlers
       showSelected.addEventListener('click', () => {
-        showSelected.style.color = '#222';
+        showSelected.style.color = 'var(--text-heading)';
         showSelected.style.fontWeight = '600';
-        showByDate.style.color = '#7a9c3a';
+        showByDate.style.color = 'var(--primary-color)';
         showByDate.style.fontWeight = '400';
-        showByTopic.style.color = '#7a9c3a';
+        showByTopic.style.color = 'var(--primary-color)';
         showByTopic.style.fontWeight = '400';
         filterPublications();
       });
 
       showByDate.addEventListener('click', () => {
-        showSelected.style.color = '#7a9c3a';
+        showSelected.style.color = 'var(--primary-color)';
         showSelected.style.fontWeight = '400';
-        showByDate.style.color = '#222';
+        showByDate.style.color = 'var(--text-heading)';
         showByDate.style.fontWeight = '600';
-        showByTopic.style.color = '#7a9c3a';
+        showByTopic.style.color = 'var(--primary-color)';
         showByTopic.style.fontWeight = '400';
         sortByDate();
       });
 
       showByTopic.addEventListener('click', () => {
-        showSelected.style.color = '#7a9c3a';
+        showSelected.style.color = 'var(--primary-color)';
         showSelected.style.fontWeight = '400';
-        showByDate.style.color = '#7a9c3a';
+        showByDate.style.color = 'var(--primary-color)';
         showByDate.style.fontWeight = '400';
-        showByTopic.style.color = '#222';
+        showByTopic.style.color = 'var(--text-heading)';
         showByTopic.style.fontWeight = '600';
         sortByTopic();
       });
