@@ -6,73 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="images/lab_logo.png" />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
-        background: #fff;
-        color: #222;
-        margin: 0;
-        padding: 0;
-        font-size: 22px;
-      }
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 32px 48px 64px 48px;
-      }
-      h1 {
-        color: #4b6e2f;
-        font-size: 1.15em;
-        font-weight: 700;
-        margin-bottom: 0.2em;
-      }
-      .publication {
-        margin-bottom: 2em;
-        padding-bottom: 1em;
-        border-bottom: 1px solid #eee;
-      }
-      .publication:last-child {
-        border-bottom: none;
-      }
-      .publication-title {
-        font-weight: bold;
-        color: #4b6e2f;
-        font-size: 1.1em;
-        margin-bottom: 0.5em;
-      }
-      .publication-authors {
-        color: #555;
-        font-size: 0.98em;
-        margin-bottom: 0.5em;
-      }
-      .publication-venue {
-        color: #888;
-        font-size: 0.95em;
-        margin-bottom: 0.5em;
-        font-style: italic;
-      }
-      .publication-links {
-        margin-top: 0.5em;
-      }
-      .publication-links a {
-        display: inline-block;
-        margin-right: 1em;
-        color: #4b6e2f;
-        text-decoration: none;
-        font-size: 0.9em;
-      }
-      .publication-links a:hover {
-        text-decoration: underline;
-      }
-    </style>
   </head>
   <body>
-    <nav style="background: #f7f7f7; border-bottom: 1px solid #e0e0e0; padding: 0.7em 0; margin-bottom: 2em;">
-      <div style="max-width: 1000px; margin: 0 auto; display: flex; gap: 2em;">
-        <a href="index.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Home</a>
-        <a href="people.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">People</a>
-        <a href="index.html#research" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Research</a>
-        <a href="publications.html" style="color: #4b6e2f; font-weight: bold; text-decoration: none;">Publications</a>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="people.html">People</a>
+        <a href="index.html#research">Research</a>
+        <a href="publications.html" class="active">Publications</a>
       </div>
     </nav>
     <div class="container">
@@ -81,31 +22,60 @@
       <h2>Preprints</h2>
       <div class="preprints-list">
         <div class="publication">
-          <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:BqipwSGYUEgC" target="_blank">Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning</a></div>
-          <div class="publication-authors">Y. Jiang, J. Hu, P. Weng, Y. Ban</div>
+          <div class="publication-title"><a href="https://kasumigaoka-utaha.github.io/OMP_web/" target="_blank">OMP: One-step Meanflow Policy with Directional Alignment</a></div>
+          <div class="publication-authors">H. Fang, Y. Huang, Y. Zhao, P. Weng, X. Li, Y. Ban</div>
         </div>
+        <div class="publication">
+          <div class="publication-title"><a href="https://surgsigma.github.io" target="_blank">SurgΣ: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence</a></div>
+          <div class="publication-authors">Z. Zeng, M. Xu, J. Jiang, P. Guo, Y. Xu, Z. Zhuo, C. H. Low, Y. He, D. Yang, C. Lin, Y. Gu, J. Guo, Y. Ban, D. Xu, Q. Dou, Y. Jin</div>
+        </div>
+        <div class="publication">
+          <div class="publication-title"><a href="https://arxiv.org/abs/2603.07032" target="_blank">SSP: Safety-guaranteed Surgical Policy via Joint Optimization of Behavioral and Spatial Constraints</a></div>
+          <div class="publication-authors">J. Hu, Z. Guan, L. Song, K. Leelakunwet, H. Wang, W. Xiao, Q. Dou, Y. Ban</div>
+        </div>
+        <!--
         <div class="publication">
           <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:YFjsv_pBGBYC" target="_blank">Temporal Propagation of Asymmetric Feature Pyramid for Surgical Scene Segmentation</a></div>
           <div class="publication-authors">C. Yuan, Y. Ban</div>
         </div>
+        -->
         <div class="publication">
           <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:NMxIlDl6LWMC" target="_blank">Tracking-Aware Deformation Field Estimation for Non-rigid 3D Reconstruction in Robotic Surgeries</a></div>
           <div class="publication-authors">Z. Wang, H. Fang, Y. Xu, Y. Ban</div>
         </div>
-        <div class="publication">
-          <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:hMod-77fHWUC" target="_blank">Diffusion Stabilizer Policy for Automated Surgical Robot Manipulations</a></div>
-          <div class="publication-authors">C. Ho, J. Hu, H. Wang, Q. Dou, Y. Ban</div>
-        </div>
+        <!--
         <div class="publication">
           <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:JV2RwH3_ST0C" target="_blank">Is Segment Anything Model 2 All You Need for Surgery Video Segmentation? A Systematic Evaluation</a></div>
           <div class="publication-authors">C. Yuan, J. Jiang, K. Yang, L. Wu, R. Wang, Z. Meng, H. Ping, Z. Xu, Y. Zhou, Y. Ban</div>
         </div>
+        -->
         <div class="publication">
           <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:k_IJM867U9cC" target="_blank">Enhancing Class Fairness in Classification with A Two-Player Game Approach</a></div>
           <div class="publication-authors">Y. Jiang, P. Weng, Y. Ban</div>
         </div>
       </div>
+      <h2>2026</h2>
+      <div class="publication">
+        <div class="publication-title"><a href="https://arxiv.org/abs/2509.23575" target="_blank">Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints</a></div>
+        <div class="publication-authors">J. Hu, L. Wang, S. Li, Y. Jiang, X. Li, P. Weng, Y. Ban</div>
+        <div class="publication-venue">International Conference on Learning Representations (ICLR), 2026</div>
+      </div>
+      <div class="publication">
+        <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:hMod-77fHWUC" target="_blank">Diffusion Stabilizer Policy for Automated Surgical Robot Manipulations</a></div>
+        <div class="publication-authors">C. Ho, J. Hu, H. Wang, Q. Dou, Y. Ban</div>
+        <div class="publication-venue">IEEE International Conference on Robotics and Automation (ICRA), 2026</div>
+      </div>
       <h2>2025</h2>
+      <div class="publication">
+        <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:BqipwSGYUEgC" target="_blank">Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning</a></div>
+        <div class="publication-authors">Y. Jiang, J. Hu, P. Weng, Y. Ban</div>
+        <div class="publication-venue">Advances in Neural Information Processing Systems (NeurIPS), 2025</div>
+      </div>
+      <div class="publication">
+        <div class="publication-title"><a href="https://arxiv.org/abs/2501.00525" target="_blank">Systematic Evaluation and Guidelines for Segment Anything Model in Surgical Video Analysis</a></div>
+        <div class="publication-authors">C. Yuan, J. Jiang, K. Yang, L. Wu, R. Wang, Z. Meng, H. Ping, Z. Xu, Y. Zhou, W. Song, H. Wang, Y. Jin, Q. Dou, Y. Ban</div>
+        <div class="publication-venue">NPJ Digital Surgery, 2025</div>
+      </div>
       <div class="publication">
         <div class="publication-title"><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EXokwkAAAAJ&citation_for_view=4EXokwkAAAAJ:M3NEmzRMIkIC" target="_blank">Surgical Scene Segmentation by Transformer with Asymmetric Feature Enhancement</a></div>
         <div class="publication-authors">C. Yuan, Y. Ban</div>
@@ -205,8 +175,7 @@
         <div class="publication-venue">2017 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2017</div>
       </div>
     </div>
-    <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 3em 0 0.0em 0;" />
-    <footer style="text-align:center; color:#888; font-size:0.8em; margin-top:0.5em; margin-bottom: 0.5em; padding:0.5em 0;">
+    <footer>
       © SJTU SIRIUS Lab
     </footer>
   </body>
